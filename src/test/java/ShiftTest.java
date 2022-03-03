@@ -3,7 +3,7 @@ import encryptDecrypt.encodeMethods.Unicode;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class DecodingTest {
+public class ShiftTest {
 
     @Test
     public void testDecodingUsingMethodShift() {
@@ -13,10 +13,10 @@ public class DecodingTest {
     }
 
     @Test
-    public void testDecodingUsingMethodUnicode() {
-        Unicode unicode = new Unicode();
-        String actual = unicode.decode("\\jqhtrj%yt%m~ujwxpnqq&", 5).toString().replace('|', '\\');
-        Assert.assertEquals("Welcome to hyperskill!", actual);
+    public void testEncodingUsingMethodShift() {
+        Shift shift = new Shift();
+        String actual = shift.encode("Welcome to hyperskill!", 5).toString().replace('|', '\\');
+        Assert.assertEquals("Bjqhtrj yt mdujwxpnqq!", actual);
     }
 
 }
